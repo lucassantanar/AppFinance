@@ -1,11 +1,9 @@
-const firebase = require ('firebase/app');
-const db = require ('firebase/database');
 
-const { dados } = require('../data/data.js');
+const { dados, app } = require('../data/firebaseController.js');
 
 exports.post = (req, res, next) => {
   dados.push(req.body)
-  console.dados;
+  console.log(app.database);
   console.log(req.body)
   res.status(201).send(req.body);
 };

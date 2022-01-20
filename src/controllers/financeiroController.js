@@ -1,8 +1,10 @@
-const data = require('../data/dataController')
+const data = require('../data/dataController');
 
 exports.post = (req, res, next) => {
-  data.addFinance(req.body);
-  res.status(201).send({ mensagem: 'Cadastro realizado!'});
+  const operacao = data.addFinance(req.body);
+  operacao.then((mensagem) => {
+    res.status(201).send(mensagem);
+  });
 };
 
 exports.put = (req, res, next) => {

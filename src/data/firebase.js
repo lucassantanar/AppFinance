@@ -1,5 +1,5 @@
 const { initializeApp } = require('firebase/app');
-const { getDatabase } = require ("firebase/database");
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyCTpAIr5Hv0YsD0Xa_oL50ZeWDIQ_-JGtA",
@@ -13,25 +13,3 @@ var firebaseConfig = {
 };
 
 exports.app = initializeApp(firebaseConfig);
-
-
-exports.dados = [
-    {
-      id: 1,
-      nome: 'Cheque Especial',
-      valor: '-1.200',
-      tipo: '1',
-    },
-    {
-      id: 2,
-      nome: 'Salário',
-      valor: '2.200',
-      tipo: '2',
-    },
-    {
-      id: 3,
-      nome: 'Almoço',
-      valor: '-100',
-      tipo: '1',
-    },
-  ];

@@ -17,6 +17,7 @@
     "express": "^4.17.2",
     "firebase": "^9.6.3",
     "nodemon": "^2.0.15",
-    "save-dev": "0.0.1-security"
+    "save-dev": "0.0.1-security",
+    "uuid": "^8.3.2"
   }
 }

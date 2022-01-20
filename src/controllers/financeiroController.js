@@ -1,11 +1,8 @@
-
-const { dados, app } = require('../data/firebaseController.js');
+const data = require('../data/dataController')
 
 exports.post = (req, res, next) => {
-  dados.push(req.body)
-  console.log(app.database);
-  console.log(req.body)
-  res.status(201).send(req.body);
+  data.addFinance(req.body);
+  res.status(201).send({ mensagem: 'Cadastro realizado!'});
 };
 
 exports.put = (req, res, next) => {

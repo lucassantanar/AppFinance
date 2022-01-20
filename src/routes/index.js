@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const { dados } = require('../data/firebaseController');
+const data = require('../data/dataController')
 
 router.get('/', function (req, res, next) {
-  res.status(200).send(dados);
+  data.getFinance().then((value) => {
+    res.status(201).send(value);
+   }        
+ );
 });
 module.exports = router;

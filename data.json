@@ -1,0 +1,22 @@
+{
+  "finance": [
+    {
+      "id": 1,
+      "nome": "Cheque Especial",
+      "valor": "-1.200",
+      "tipo": "1"
+    },
+    {
+      "id": 3,
+      "nome": "Almoço",
+      "valor": "-100",
+      "tipo": "1"
+    },
+    {
+      "id": 2,
+      "nome": "Salário",
+      "valor": "2.200",
+      "tipo": "2"
+    }
+  ]
+}

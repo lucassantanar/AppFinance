@@ -9,7 +9,7 @@ const {
   remove
 } = require('firebase/database');
 const { v4: uuid } = require('uuid');
-const app = require('../data/firebase');
+const { app } = require('../data/firebase');
 
 module.exports.getFinance = () => {
   const dbRef = ref(getDatabase());
@@ -57,19 +57,20 @@ module.exports.addFinance = (params) => {
 
 module.exports.updateFinance = (params, key) => {
   console.log(params)
-  const dbRef = getDatabase();
+  const dbRef = getDatabase(app);
   const updates = {};
 
+  const financeRef = ref(dbRef, `/finance/${key.id}`)
   // const data = {
   //   nome: params.nome,
   //   valor: params.valor,
 	// 	tipo: params.tipo
   // };
 
-  updates['/finance/' + key.id] = params;
+  // console.log(dbRef);
+  // updates['/finance/' + key.id] = params;
 
-  return update(ref(dbRef), updates)
-    .then(() => {
+  return update(financeRef, params).then(() => {
       return { mensagem: 'Cadastro alterado.' };
     })
     .catch(() => {

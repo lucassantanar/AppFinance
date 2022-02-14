@@ -61,14 +61,6 @@ module.exports.updateFinance = (params, key) => {
   const updates = {};
 
   const financeRef = ref(dbRef, `/finance/${key.id}`)
-  // const data = {
-  //   nome: params.nome,
-  //   valor: params.valor,
-	// 	tipo: params.tipo
-  // };
-
-  // console.log(dbRef);
-  // updates['/finance/' + key.id] = params;
 
   return update(financeRef, params).then(() => {
       return { mensagem: 'Cadastro alterado.' };
